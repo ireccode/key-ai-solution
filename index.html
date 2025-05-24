@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Solution - AI Solutions for Business Growth</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact-form.css">
+    <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.webp" alt="Key Solution Logo">
+                <div class="logo-text">KEY SOLUTION</div>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="login-button">Login</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text fade-in">
+                <h1 class="hero-title">Key <span>AI Solutions</span> for Business Growth</h1>
+                <p class="hero-subtitle">Unlock  potential with safe, responsible, and powerful AI solutions tailored to your business needs.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="primary-button">Get Started</a>
+                    <a href="#about" class="secondary-button">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image slide-up">
+                <img src="images/logo.webp" alt="Key Solution AI">
+            </div>
+        </div>
+    </section>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Everything You <span>Need</span> In One Place</h2>
+            
+            <div class="features-grid">
+                <!-- Feature 0 -->           
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="feature-title">AI Strategy Consulting</h3>
+                    <p class="feature-description">Helping businesses build robust AI strategies, aligning with their long-term goals.</p>
+                </div>
+
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="feature-title">Custom AI Agent Engineering</h3>
+                    <p class="feature-description">We design, deploy, and maintain custom AI agents specifically tailored to your business growth goals.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="feature-title">Fully Managed Automation Pipelines</h3>
+                    <p class="feature-description">Robust data infrastructure and ingestion processes are a critical component in how we build out our systems.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Performance Analytic Dashboard</h3>
+                    <p class="feature-description">Easily track ROI and efficiency gains with custom metrics on your AI agent's performance.</p>
+                </div>
+
+                <!-- Feature 4 -->           
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="feature-title">Secure and Compliant Protocols</h3>
+                    <p class="feature-description">Technology architecture that is fully hosted in the cloud, ensuring compliance with SOC-2, ISO, and other industry standards.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3 class="feature-title">Seamless Integration</h3>
+                    <p class="feature-description">Connect with over 850+ industry standard tools and platforms to enhance your existing workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    
+<div style="position: relative; width: 100%; display: block; clear: both;">
+    <!-- Calculator Section -->
+    <section class="calculator-section" id="calculator">
+        <div class="container">
+            <h2 class="section-title">Calculate Your <span>Time Savings</span></h2>
+            <p class="section-subtitle">See how much time our AI agents can save you each month</p>
+            
+            <div class="calculator-container">
+                <div class="calculator-inputs">
+                    <h3 class="calculator-title">Monthly Hours Spent</h3>
+                    
+                    <!-- AI Inbox Classification -->
+                    <div class="calculator-item">
+                        <div class="calculator-item-header">
+                            <div class="calculator-item-title">AI Inbox Classification</div>
+                            <div class="calculator-item-value">5 hours</div>
+                        </div>
+                        <div class="calculator-item-description">Automatically sorts and prioritizes incoming leads and billing emails</div>
+                        <div class="slider-container calculator-slider" id="inbox-classification">
+                            <div class="slider-track"></div>
+                            <div class="slider-thumb"></div>
+                        </div>
+                        <div class="slider-labels">
+                            <div>0 hours</div>
+                            <div>20 hours</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Personalized Email Follow-Ups -->
+                    <div class="calculator-item">
+                        <div class="calculator-item-header">
+                            <div class="calculator-item-title">Personalized Email Follow-Ups</div>
+                            <div class="calculator-item-value">5 hours</div>
+                        </div>
+                        <div class="calculator-item-description">Automatically trigger personalized email sequences for leads and invoices</div>
+                        <div class="slider-container calculator-slider" id="email-followups">
+                            <div class="slider-track"></div>
+                            <div class="slider-thumb"></div>
+                        </div>
+                        <div class="slider-labels">
+                            <div>0 hours</div>
+                            <div>20 hours</div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI-Driven Lead Qualification -->
+                    <div class="calculator-item">
+                        <div class="calculator-item-header">
+                            <div class="calculator-item-title">AI-Driven Lead Qualification</div>
+                            <div class="calculator-item-value">5 hours</div>
+                        </div>
+                        <div class="calculator-item-description">Instantly captures key lead information from emails</div>
+                        <div class="slider-container calculator-slider" id="lead-qualification">
+                            <div class="slider-track"></div>
+                            <div class="slider-thumb"></div>
+                        </div>
+                        <div class="slider-labels">
+                            <div>0 hours</div>
+                            <div>20 hours</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Automated Invoice Processing -->
+                    <div class="calculator-item">
+                        <div class="calculator-item-header">
+                            <div class="calculator-item-title">Automated Invoice Processing</div>
+                            <div class="calculator-item-value">5 hours</div>
+                        </div>
+                        <div class="calculator-item-description">Detects invoices, extracts data, and tracks all invoices</div>
+                        <div class="slider-container calculator-slider" id="invoice-processing">
+                            <div class="slider-track"></div>
+                            <div class="slider-thumb"></div>
+                        </div>
+                        <div class="slider-labels">
+                            <div>0 hours</div>
+                            <div>20 hours</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Automatic Client Documents Onboarding -->
+                    <div class="calculator-item">
+                        <div class="calculator-item-header">
+                            <div class="calculator-item-title">Client Documents Onboarding</div>
+                            <div class="calculator-item-value">5 hours</div>
+                        </div>
+                        <div class="calculator-item-description">Automate the process of onboarding client documents</div>
+                        <div class="slider-container calculator-slider" id="document-onboarding">
+                            <div class="slider-track"></div>
+                            <div class="slider-thumb"></div>
+                        </div>
+                        <div class="slider-labels">
+                            <div>0 hours</div>
+                            <div>20 hours</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Effortless Document Management -->
+                    <div class="calculator-item">
+                        <div class="calculator-item-header">
+                            <div class="calculator-item-title">Document Management with AI</div>
+                            <div class="calculator-item-value">5 hours</div>
+                        </div>
+                        <div class="calculator-item-description">Instantly find the right document with AI-powered search</div>
+                        <div class="slider-container calculator-slider" id="document-management">
+                            <div class="slider-track"></div>
+                            <div class="slider-thumb"></div>
+                        </div>
+                        <div class="slider-labels">
+                            <div>0 hours</div>
+                            <div>20 hours</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conversational Knowledge Base Access -->
+                    <div class="calculator-item">
+                        <div class="calculator-item-header">
+                            <div class="calculator-item-title">Conversational Knowledge Base</div>
+                            <div class="calculator-item-value">5 hours</div>
+                        </div>
+                        <div class="calculator-item-description">ChatGPT-like access to your firm's information</div>
+                        <div class="slider-container calculator-slider" id="knowledge-base">
+                            <div class="slider-track"></div>
+                            <div class="slider-thumb"></div>
+                        </div>
+                        <div class="slider-labels">
+                            <div>0 hours</div>
+                            <div>20 hours</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Automatic Lead Generation -->
+                    <div class="calculator-item">
+                        <div class="calculator-item-header">
+                            <div class="calculator-item-title">Automatic Lead Generation</div>
+                            <div class="calculator-item-value">5 hours</div>
+                        </div>
+                        <div class="calculator-item-description">Automate the process of generating new leads</div>
+                        <div class="slider-container calculator-slider" id="lead-generation">
+                            <div class="slider-track"></div>
+                            <div class="slider-thumb"></div>
+                        </div>
+                        <div class="slider-labels">
+                            <div>0 hours</div>
+                            <div>20 hours</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Automatic Content Generation -->
+                    <div class="calculator-item">
+                        <div class="calculator-item-header">
+                            <div class="calculator-item-title">Automatic Content Generation</div>
+                            <div class="calculator-item-value">5 hours</div>
+                        </div>
+                        <div class="calculator-item-description">Generate high-quality content automatically</div>
+                        <div class="slider-container calculator-slider" id="content-generation">
+                            <div class="slider-track"></div>
+                            <div class="slider-thumb"></div>
+                        </div>
+                        <div class="slider-labels">
+                            <div>0 hours</div>
+                            <div>20 hours</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ultimate Assistant -->
+                    <div class="calculator-item">
+                        <div class="calculator-item-header">
+                            <div class="calculator-item-title">Ultimate Assistant</div>
+                            <div class="calculator-item-value">5 hours</div>
+                        </div>
+                        <div class="calculator-item-description">Your comprehensive AI assistant for all tasks</div>
+                        <div class="slider-container calculator-slider" id="ultimate-assistant">
+                            <div class="slider-track"></div>
+                            <div class="slider-thumb"></div>
+                        </div>
+                        <div class="slider-labels">
+                            <div>0 hours</div>
+                            <div>20 hours</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-divider"></div>
+                    
+                    <!-- Value of Your Time -->
+                    <div class="calculator-item">
+                        <div class="calculator-item-header">
+                            <div class="calculator-item-title">Value of Your Time</div>
+                            <div class="calculator-item-value">$50</div>
+                        </div>
+                        <div class="calculator-item-description">How much is an hour worth to you?</div>
+                        <div class="slider-container calculator-slider" id="hourly-value">
+                            <div class="slider-track"></div>
+                            <div class="slider-thumb"></div>
+                        </div>
+                        <div class="slider-labels">
+                            <div>$50/hour</div>
+                            <div>$200/hour</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculator-results">
+                    <h3 class="calculator-title">Your Results</h3>
+                    
+                    <div class="result-item">
+                        <div class="result-label">Total Hours Saved Monthly</div>
+                        <div class="result-value" id="total-hours-saved">40 hours</div>
+                    </div>
+                    
+                    <div class="result-item">
+                        <div class="result-label">Monthly Value</div>
+                        <div class="result-value medium" id="monthly-value">$2,000</div>
+                    </div>
+                    
+                    <div class="result-item">
+                        <div class="result-label">Yearly Value</div>
+                        <div class="result-value medium" id="yearly-value">$24,000</div>
+                    </div>
+                    
+                    <div class="result-item">
+                        <div class="result-label">ROI on Annual Plan</div>
+                        <div class="result-value small" id="roi-value">632%</div>
+                    </div>
+                    
+                    <div class="calculator-cta">
+                        <a href="#contact-form" class="primary-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About <span>Us</span></h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/keysol.jpg" alt="Key Solution Team">
+                </div>
+                <div class="about-text">
+                    <h3 class="about-subtitle">Irek Niedbala - CTO</h3>
+                    <p class="about-description">
+                        I help businesses solve their everyday problems by using the latest tech in Cloud, AI, and blockchain.
+                    </p>
+                    <div class="about-points">
+                        <div class="about-point">
+                            <div class="about-point-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <p>Making AI Easy: I build simple ways to use AI, like having your own smart helper for tasks and information, all running safely on your own computers or online.</p>
+                        </div>
+                        <div class="about-point">
+                            <div class="about-point-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <p>Smarter Software: I've created AI tools that explain complex things easily, give you instant help with your work, and even learn how you like to do things to make it faster.</p>
+                        </div>
+                        <div class="about-point">
+                            <div class="about-point-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <p>Exploring New Tech: I've jumped into the world of blockchain, trying out new ideas like secure online money and unique digital tokens, to see how they can benefit businesses.</p>
+                        </div>
+                        <div class="about-point">
+                            <div class="about-point-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <p>Building Strong Foundations: I've worked with big systems like SAP, using AI to make them smarter and more efficient, and guiding teams to use the best methods to support customers.</p>
+                        </div>
+                    </div>
+                    <p class="about-description" style="margin-top: 20px;">
+                        Basically, I take the complicated stuff like AI and blockchain and turn it into practical solutions that solve real problems for our customers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client <span>Testimonials</span></h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 40px;">
+                Our top priority is keeping our clients happy and helping them reach their business goals. Here is what our previous clients had to say about working with us.
+            </p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            Eexceptional leader and expert who consistently delivered high-quality cloud solutions with deep SAP BTP knowledge. Highlights his mentoring skills (recognized with a "Change Leader" award) and his success in leading AI-driven projects that improved efficiency and customer satisfaction.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-info">
+                                <div class="testimonial-author-name">Cong Zhou</div>
+                                <div class="testimonial-author-title">Senior Director of SAP Commerce Cloud Operation & Support</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            His outstanding ability to deliver complex technical projects like cloud migrations and for effectively bridging the gap between technical teams and customers. Notes his instrumental role as a DevOps lead in developing scalable cloud infrastructures, his technical skills, mentorship, and collaborative, friendly optimist.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-info">
+                                <div class="testimonial-author-name">Jefferson Wang</div>
+                                <div class="testimonial-author-title">Director of Cloud Service Delivery at SAP</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            Highly recommends Irek as a fantastic Senior Software Developer skilled in designing and developing backend and frontend Java applications within Agile and SDLC practices for telecom and finance. Emphasizes his hard work, quick learning, helpfulness, delivery of high-quality solutions for international projects, and his knack for product management.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-info">
+                                <div class="testimonial-author-name">Michal Policht</div>
+                                <div class="testimonial-author-title">Production Director - Business Banking</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section" id="contact-form">
+        <div class="container">
+            <h2 class="section-title">Contact <span>Us</span></h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 40px;">
+                Tell us about your project and we'll help you find the perfect AI solution for your business needs.
+            </p>
+            
+            <div class="form-container">
+                <div class="form-progress">
+                    <div class="step-indicator">
+                        <div class="step-dot active"></div>
+                        <div class="step-dot"></div>
+                        <div class="step-dot"></div>
+                        <div class="step-dot"></div>
+                        <div class="step-dot"></div>
+                        <div class="step-dot"></div>
+                    </div>
+                    <div class="progress-text">Step 1 of 6</div>
+                </div>
+                
+                <form id="multi-step-form">
+                    <!-- Step 1 -->
+                    <div class="form-step active">
+                        <h3 class="step-title">What would you like to accomplish with AI automation?</h3>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                AI Inbox Classification
+                                <input type="checkbox" name="ai_goal" value="AI Inbox Classification">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                Personalized Email Follow-Ups
+                                <input type="checkbox" name="ai_goal" value="Personalized Email Follow-Ups">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                AI-Driven Lead Qualification
+                                <input type="checkbox" name="ai_goal" value="AI-Driven Lead Qualification">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                Automated Invoice Detection & Tracking
+                                <input type="checkbox" name="ai_goal" value="Automated Invoice Detection & Tracking">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                Automated Invoice Processing in Xero
+                                <input type="checkbox" name="ai_goal" value="Automated Invoice Processing in Xero">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                Effortless Document Management with AI
+                                <input type="checkbox" name="ai_goal" value="Effortless Document Management with AI">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                Conversational Knowledge Base
+                                <input type="checkbox" name="ai_goal" value="Conversational Access to Knowledge Base">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                Automatic Lead Generation
+                                <input type="checkbox" name="ai_goal" value="Automatic Lead Generation">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                Automatic Content Generation
+                                <input type="checkbox" name="ai_goal" value="Automatic Content Generation">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                Ultimate Assistant
+                                <input type="checkbox" name="ai_goal" value="Ultimate Assistant">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Other (please specify)</label>
+                            <input type="text" class="form-control" name="ai_goal_other" placeholder="Enter your specific AI automation goal">
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="button" class="form-button btn-back">Back</button>
+                            <button type="button" class="form-button btn-next">Next</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="form-step">
+                        <h3 class="step-title">Which business area do you need support with?</h3>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                Lead Management & Qualification
+                                <input type="radio" name="business_area" value="Lead Management & Qualification">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <label class="radio-item">
+                                Billing & Invoicing
+                                <input type="radio" name="business_area" value="Billing & Invoicing">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <label class="radio-item">
+                                Document Management
+                                <input type="radio" name="business_area" value="Document Management">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <label class="radio-item">
+                                Knowledge Management
+                                <input type="radio" name="business_area" value="Knowledge Management">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <label class="radio-item">
+                                Customer Support
+                                <input type="radio" name="business_area" value="Customer Support">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <label class="radio-item">
+                                Content Generation
+                                <input type="radio" name="business_area" value="Content Generation">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <label class="radio-item">
+                                General Workflow Automation
+                                <input type="radio" name="business_area" value="General Workflow Automation">
+                                <span class="radio-mark"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="button" class="form-button btn-back">Back</button>
+                            <button type="button" class="form-button btn-next">Next</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="form-step">
+                        <h3 class="step-title">What are your current pain points or workflow bottlenecks?</h3>
+                        <p class="step-description">(e.g., slow lead response, missed invoices, document search issues, knowledge access, etc.)</p>
+                        
+                        <div class="form-group">
+                            <textarea class="form-control" name="pain_points" rows="5" placeholder="Describe your current challenges and pain points"></textarea>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="button" class="form-button btn-back">Back</button>
+                            <button type="button" class="form-button btn-next">Next</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="form-step">
+                        <h3 class="step-title">What is your timeline for this project?</h3>
+                        
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                Immediate
+                                <input type="radio" name="timeline" value="Immediate">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <label class="radio-item">
+                                Within 3 months
+                                <input type="radio" name="timeline" value="Within 3 months">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <label class="radio-item">
+                                Within 6 months
+                                <input type="radio" name="timeline" value="Within 6 months">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <label class="radio-item">
+                                More than 6 months
+                                <input type="radio" name="timeline" value="More than 6 months">
+                                <span class="radio-mark"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="button" class="form-button btn-back">Back</button>
+                            <button type="button" class="form-button btn-next">Next</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="form-step">
+                        <h3 class="step-title">What is your preferred budget for this project?</h3>
+                        
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                $5,000 – $10,000
+                                <input type="radio" name="budget" value="$5,000 – $10,000">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <label class="radio-item">
+                                $10,000 – $20,000
+                                <input type="radio" name="budget" value="$10,000 – $20,000">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <label class="radio-item">
+                                $20,000 – $30,000
+                                <input type="radio" name="budget" value="$20,000 – $30,000">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <label class="radio-item">
+                                $30,000 – $40,000
+                                <input type="radio" name="budget" value="$30,000 – $40,000">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <label class="radio-item">
+                                $40,000+
+                                <input type="radio" name="budget" value="$40,000+">
+                                <span class="radio-mark"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="button" class="form-button btn-back">Back</button>
+                            <button type="button" class="form-button btn-next">Next</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 6 -->
+                    <div class="form-step">
+                        <h3 class="step-title">Share Your Details, and We'll Reach Out</h3>
+                        <p class="step-description">Provide your contact details below and we'll get in touch soon to discuss how we can assist with your project. Expect to hear from us via email or WhatsApp if it's a great fit!</p>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Name *</label>
+                            <input type="text" class="form-control" name="name" required placeholder="Your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Company (optional)</label>
+                            <input type="text" class="form-control" name="company" placeholder="Your company name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Email *</label>
+                            <input type="email" class="form-control" name="email" required placeholder="Your email address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Phone number (optional)</label>
+                            <input type="tel" class="form-control" name="phone" placeholder="Your phone number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Preferred contact method *</label>
+                            <select class="form-control" name="contact_method" required>
+                                <option value="">Select your preferred contact method</option>
+                                <option value="Email">Email</option>
+                                <option value="WhatsApp">WhatsApp</option>
+                                <option value="Phone">Phone</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="button" class="form-button btn-back">Back</button>
+                            <button type="submit" class="form-button btn-submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.webp" alt="Key Solution Logo">
+                    <div class="logo-text">KEY SOLUTION</div>
+                    <p class="footer-description">
+                        Key AI solutions designed for business growth.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Services</h3>
+                    <ul>
+                        <li><a href="#">AI Solutions</a></li>
+                        <li><a href="#">Cloud Integration</a></li>
+                        <li><a href="#">Blockchain Development</a></li>
+                        <li><a href="#">Custom Software</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>irek@keyaisolution.com</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>+61 433 06 88 45</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 Key Solution. All rights reserved.
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/calculator.js"></script>
+</body>
+</html>
