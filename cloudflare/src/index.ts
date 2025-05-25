@@ -11,18 +11,22 @@ interface Env {
 }
 
 interface FormData {
+    // Required fields
     name: string;
-    company: string;
     email: string;
-    phone: string;
-    country: string;
-    best_time: string;
-    goals: string[];
     business_area: string;
     pain_points: string;
     timeline: string;
     budget: string;
     annual_revenue: string;
+    
+    // Optional fields that may have defaults
+    contact_method: string; // Email, WhatsApp, or Phone
+    company?: string;
+    phone?: string;
+    
+    // Other form data
+    goals?: string[];
 }
 
 export default {
@@ -73,15 +77,32 @@ export default {
         try {
             const formData = await request.json();
             
-            // Validate required fields
-            const requiredFields = ['name', 'email', 'phone', 'country', 'best_time'];
-            for (const field of requiredFields) {
-                if (!formData[field as keyof FormData]) {
-                    return new Response(JSON.stringify({ error: `Missing required field: ${field}` }), {
+            // Validate required fields based on the actual form
+            const requiredFields = [
+                { field: 'name', label: 'Full Name' },
+                { field: 'email', label: 'Email' },
+                { field: 'business_area', label: 'Business Area' },
+                { field: 'pain_points', label: 'Pain Points' },
+                { field: 'timeline', label: 'Timeline' },
+                { field: 'budget', label: 'Budget' },
+                { field: 'annual_revenue', label: 'Annual Revenue' }
+            ];
+            
+            for (const { field, label } of requiredFields) {
+                if (!formData[field]) {
+                    return new Response(JSON.stringify({ 
+                        error: `Missing required field: ${label}`,
+                        field: field
+                    }), {
                         status: 400,
                         headers
                     });
                 }
+            }
+            
+            // Set default contact method if not provided
+            if (!formData.contact_method) {
+                formData.contact_method = 'Email';
             }
 
             try {
@@ -92,21 +113,34 @@ export default {
 <head>
   <meta charset="utf-8">
   <title>New Contact Form Submission</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    h2 { color: #4a6cf7; }
+    .section { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+    .label { font-weight: bold; }
+  </style>
 </head>
 <body>
   <h2>New Contact Form Submission</h2>
-  <p><strong>Name:</strong> ${formData.name}</p>
-  <p><strong>Company:</strong> ${formData.company || 'N/A'}</p>
-  <p><strong>Email:</strong> ${formData.email}</p>
-  <p><strong>Phone:</strong> ${formData.phone}</p>
-  <p><strong>Country:</strong> ${formData.country}</p>
-  <p><strong>Best Time to Contact:</strong> ${formData.best_time}</p>
-  <p><strong>Goals:</strong> ${Array.isArray(formData.goals) ? formData.goals.join(', ') : formData.goals || 'N/A'}</p>
-  <p><strong>Business Area:</strong> ${formData.business_area || 'N/A'}</p>
-  <p><strong>Pain Points:</strong> ${formData.pain_points || 'N/A'}</p>
-  <p><strong>Timeline:</strong> ${formData.timeline || 'N/A'}</p>
-  <p><strong>Budget:</strong> ${formData.budget || 'N/A'}</p>
-  <p><strong>Annual Revenue:</strong> ${formData.annual_revenue || 'N/A'}</p>
+  
+  <div class="section">
+    <h3>Contact Information</h3>
+    <p><span class="label">Name:</span> ${formData.name}</p>
+    <p><span class="label">Email:</span> ${formData.email}</p>
+    <p><span class="label">Preferred Contact Method:</span> ${formData.contact_method}</p>
+    <p><span class="label">Phone:</span> ${formData.phone || 'Not provided'}</p>
+    <p><span class="label">Company:</span> ${formData.company || 'Not provided'}</p>
+  </div>
+  
+  <div class="section">
+    <h3>Project Details</h3>
+    <p><span class="label">Goals:</span> ${Array.isArray(formData.goals) ? formData.goals.join(', ') : formData.goals || 'Not specified'}</p>
+    <p><span class="label">Business Area:</span> ${formData.business_area || 'Not specified'}</p>
+    <p><span class="label">Pain Points:</span> ${formData.pain_points || 'Not specified'}</p>
+    <p><span class="label">Timeline:</span> ${formData.timeline || 'Not specified'}</p>
+    <p><span class="label">Budget:</span> ${formData.budget || 'Not specified'}</p>
+    <p><span class="label">Annual Revenue:</span> ${formData.annual_revenue || 'Not specified'}</p>
+  </div>
 </body>
 </html>
                 `;
@@ -131,19 +165,24 @@ Content-Type: multipart/alternative; boundary="${boundary}"
 Content-Type: text/plain; charset=utf-8
 
 New Contact Form Submission
--------------------------
+=========================
+
+CONTACT INFORMATION:
+-----------------
 Name: ${formData.name}
-Company: ${formData.company || 'N/A'}
 Email: ${formData.email}
-Phone: ${formData.phone}
-Country: ${formData.country}
-Best Time to Contact: ${formData.best_time}
-Goals: ${Array.isArray(formData.goals) ? formData.goals.join(', ') : formData.goals || 'N/A'}
-Business Area: ${formData.business_area || 'N/A'}
-Pain Points: ${formData.pain_points || 'N/A'}
-Timeline: ${formData.timeline || 'N/A'}
-Budget: ${formData.budget || 'N/A'}
-Annual Revenue: ${formData.annual_revenue || 'N/A'}
+Preferred Contact Method: ${formData.contact_method}
+Phone: ${formData.phone || 'Not provided'}
+Company: ${formData.company || 'Not provided'}
+
+PROJECT DETAILS:
+--------------
+Goals: ${Array.isArray(formData.goals) ? formData.goals.join(', ') : formData.goals || 'Not specified'}
+Business Area: ${formData.business_area}
+Pain Points: ${formData.pain_points}
+Timeline: ${formData.timeline}
+Budget: ${formData.budget}
+Annual Revenue: ${formData.annual_revenue}
 
 --${boundary}
 Content-Type: text/html; charset=utf-8

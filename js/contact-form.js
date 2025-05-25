@@ -111,6 +111,31 @@ document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('multi-step-form');
         const formData = new FormData(form);
         
+        // Check for required fields
+        const requiredFields = [
+            { field: 'name', label: 'Full Name' },
+            { field: 'email', label: 'Email' },
+            { field: 'business_area', label: 'Business Area' },
+            { field: 'pain_points', label: 'Pain Points' },
+            { field: 'timeline', label: 'Timeline' },
+            { field: 'budget', label: 'Budget' },
+            { field: 'annual_revenue', label: 'Annual Revenue' }
+        ];
+        
+        let missingFields = [];
+        for (const { field, label } of requiredFields) {
+            if (!formData.get(field)) {
+                missingFields.push(label);
+            }
+        }
+        
+        if (missingFields.length > 0) {
+            alert(`Please fill in the following required fields: ${missingFields.join(', ')}`);
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Submit';
+            return;
+        }
+        
         // Display loading state
         submitButton.disabled = true;
         submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
@@ -120,10 +145,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const formJson = {};
             for (const [key, value] of formData.entries()) {
                 if (key === 'goals') {
-                    formJson[key] = Array.from(value).map(v => v.value);
+                    formJson[key] = Array.isArray(value) ? value : [value];
                 } else {
                     formJson[key] = value;
                 }
+            }
+            
+            // Set default contact method if not provided
+            if (!formJson.contact_method) {
+                formJson.contact_method = 'Email';
             }
 
             // Send to Cloudflare Worker with API key authentication
