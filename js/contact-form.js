@@ -143,13 +143,28 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             // Convert FormData to JSON
             const formJson = {};
+            
+            // Handle checkboxes (multiple values with same name)
+            const aiGoals = [];
+            let aiGoalOther = '';
+            
             for (const [key, value] of formData.entries()) {
-                if (key === 'goals') {
-                    formJson[key] = Array.isArray(value) ? value : [value];
+                if (key === 'ai_goal') {
+                    aiGoals.push(value);
+                } else if (key === 'ai_goal_other') {
+                    aiGoalOther = value;
                 } else {
                     formJson[key] = value;
                 }
             }
+            
+            // Add the "Other" goal if specified
+            if (aiGoalOther && aiGoalOther.trim() !== '') {
+                aiGoals.push(`Other: ${aiGoalOther}`);
+            }
+            
+            // Add goals array to formJson
+            formJson.goals = aiGoals;
             
             // Set default contact method if not provided
             if (!formJson.contact_method) {

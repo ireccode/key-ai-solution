@@ -5,12 +5,12 @@
     "send_email": [
         {
             "name": "SEND_EMAIL",
-            "destination_address": "info@keyaisolution.com"
+            "destination_address": "irek@smartechall.com"
         }
     ],
     "vars": {
         "EMAIL_FROM": "noreply@keyaisolution.com",
-        "EMAIL_TO": "info@keyaisolution.com",
+        "EMAIL_TO": "irek@smartechall.com",
         "EMAIL_SUBJECT": "New Contact Form Submission - Key Solution"
     },
     "observability": {
