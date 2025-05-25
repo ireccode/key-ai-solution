@@ -17,16 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Maximum values for each automation (hours)
     const maxValues = {
-        'inbox-classification': 20,
-        'email-followups': 20,
-        'lead-qualification': 20,
-        'invoice-processing': 20,
-        'document-onboarding': 20,
-        'document-management': 20,
-        'knowledge-base': 20,
-        'lead-generation': 20,
-        'content-generation': 20,
-        'ultimate-assistant': 20,
+        'inbox-classification': 40,
+        'email-followups': 40,
+        'lead-qualification': 40,
+        'invoice-processing': 40,
+        'document-onboarding': 40,
+        'document-management': 40,
+        'knowledge-base': 40,
+        'lead-generation': 40,
+        'content-generation': 40,
+        'ultimate-assistant': 40,
         'hourly-value': 200
     };
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Annual plan cost (for ROI calculation)
-    const annualPlanCost = 3800;
+    const annualPlanCost = 5000;
 
     // Initialize sliders
     const sliders = document.querySelectorAll('.calculator-slider');

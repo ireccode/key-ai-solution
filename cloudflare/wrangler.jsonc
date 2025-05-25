@@ -1,0 +1,22 @@
+{
+    "name": "kesol-email-worker",
+    "compatibility_date": "2025-05-25",
+    "main": "src/index.ts",
+    "send_email": [
+        {
+            "name": "SEND_EMAIL",
+            "destination_address": "info@keyaisolution.com"
+        }
+    ],
+    "vars": {
+        "EMAIL_FROM": "noreply@keyaisolution.com",
+        "EMAIL_TO": "info@keyaisolution.com",
+        "EMAIL_SUBJECT": "New Contact Form Submission - Key Solution"
+    },
+    "observability": {
+        "enabled": true,
+        "logs": {
+            "enabled": true
+        }
+    }
+}
