@@ -14,7 +14,6 @@ interface FormData {
     // Required fields
     name: string;
     email: string;
-    business_area: string;
     pain_points: string;
     timeline: string;
     budget: string;
@@ -101,7 +100,6 @@ export default {
             const requiredFields = [
                 { field: 'name', label: 'Full Name' },
                 { field: 'email', label: 'Email' },
-                { field: 'business_area', label: 'Business Area' },
                 { field: 'pain_points', label: 'Pain Points' },
                 { field: 'timeline', label: 'Timeline' },
                 { field: 'budget', label: 'Budget' },
@@ -118,6 +116,23 @@ export default {
                         headers
                     });
                 }
+            }
+            
+            // Validate that at least one AI goal is selected
+            const hasGoals = Array.isArray(formData.goals) && formData.goals.length > 0;
+            const hasIndividualGoals = Object.keys(formData).some(key => 
+                (key.startsWith('ai_goal') && key !== 'ai_goal_other' && formData[key]) || 
+                (key === 'ai_goal_other' && formData[key])
+            );
+            
+            if (!hasGoals && !hasIndividualGoals) {
+                return new Response(JSON.stringify({ 
+                    error: 'Please select at least one AI goal or specify your own',
+                    field: 'goals'
+                }), {
+                    status: 400,
+                    headers
+                });
             }
             
             // Set default contact method if not provided
@@ -173,7 +188,6 @@ export default {
       </ul>
     </div>
     
-    <p><span class="label">Business Area:</span> ${formData.business_area || 'Not specified'}</p>
     <p><span class="label">Pain Points:</span> ${formData.pain_points || 'Not specified'}</p>
     <p><span class="label">Timeline:</span> ${formData.timeline || 'Not specified'}</p>
     <p><span class="label">Budget:</span> ${formData.budget || 'Not specified'}</p>

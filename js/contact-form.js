@@ -76,6 +76,54 @@ document.addEventListener('DOMContentLoaded', function() {
         const requiredFields = currentStepElement.querySelectorAll('[required]');
         let isValid = true;
         
+        // Special validation for step 1 (AI goals)
+        if (stepIndex === 0) {
+            // Check if at least one AI goal is selected or ai_goal_other is filled
+            const aiGoalCheckboxes = currentStepElement.querySelectorAll('input[type="checkbox"][name^="ai_goal"]');
+            const aiGoalOther = currentStepElement.querySelector('input[name="ai_goal_other"]');
+            
+            let hasSelectedGoal = false;
+            
+            // Check if any checkbox is checked
+            aiGoalCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    hasSelectedGoal = true;
+                }
+            });
+            
+            // Check if "Other" field is filled
+            if (aiGoalOther && aiGoalOther.value.trim() !== '') {
+                hasSelectedGoal = true;
+            }
+            
+            // If no goal is selected, show error
+            if (!hasSelectedGoal) {
+                isValid = false;
+                
+                // Add error message if it doesn't exist
+                let errorContainer = currentStepElement.querySelector('.goals-error-message');
+                if (!errorContainer) {
+                    errorContainer = document.createElement('div');
+                    errorContainer.classList.add('goals-error-message');
+                    errorContainer.style.color = '#ff6b6b';
+                    errorContainer.style.fontSize = '0.85rem';
+                    errorContainer.style.marginTop = '10px';
+                    errorContainer.style.marginBottom = '10px';
+                    errorContainer.textContent = 'Please select at least one AI goal or specify your own';
+                    
+                    // Insert after the checkbox group
+                    const checkboxGroup = currentStepElement.querySelector('.checkbox-group');
+                    checkboxGroup.parentNode.insertBefore(errorContainer, checkboxGroup.nextSibling);
+                }
+            } else {
+                // Remove error message if it exists
+                const errorContainer = currentStepElement.querySelector('.goals-error-message');
+                if (errorContainer) {
+                    errorContainer.remove();
+                }
+            }
+        }
+        
         requiredFields.forEach(field => {
             if (!field.value.trim()) {
                 isValid = false;
