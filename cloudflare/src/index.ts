@@ -244,7 +244,6 @@ ${formData.ai_goal1 ? `- ${formData.ai_goal1}
 ` : ''}${formData.ai_goal10 ? `- ${formData.ai_goal10}
 ` : ''}${formData.ai_goal_other ? `- Other: ${formData.ai_goal_other}
 ` : ''}
-Business Area: ${formData.business_area}
 Pain Points: ${formData.pain_points}
 Timeline: ${formData.timeline}
 Budget: ${formData.budget}

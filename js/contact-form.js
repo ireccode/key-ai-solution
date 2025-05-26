@@ -163,7 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const requiredFields = [
             { field: 'name', label: 'Full Name' },
             { field: 'email', label: 'Email' },
-            { field: 'business_area', label: 'Business Area' },
             { field: 'pain_points', label: 'Pain Points' },
             { field: 'timeline', label: 'Timeline' },
             { field: 'budget', label: 'Budget' },
