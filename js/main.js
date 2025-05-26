@@ -1,4 +1,4 @@
-// Key Solution Website JavaScript
+// Key AI Solution Website JavaScript
 
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {

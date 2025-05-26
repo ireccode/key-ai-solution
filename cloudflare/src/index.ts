@@ -207,7 +207,7 @@ export default {
                 const emailContent = 
 `From: ${env.EMAIL_FROM || 'noreply@keyaisolution.com'}
 To: ${env.EMAIL_TO || 'irekkeyaisolution@gmail.com'}
-Subject: ${env.EMAIL_SUBJECT || 'New Contact Form Submission - Key Solution'}
+Subject: ${env.EMAIL_SUBJECT || 'New Contact Form Submission - Key AI Solution'}
 Message-ID: ${messageId}
 Date: ${new Date().toUTCString()}
 MIME-Version: 1.0

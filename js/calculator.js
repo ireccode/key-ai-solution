@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'lead-generation': 40,
         'content-generation': 40,
         'ultimate-assistant': 40,
-        'hourly-value': 200
+        'hourly-value': 500
     };
 
     // Efficiency factors (percentage of time saved)
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Annual plan cost (for ROI calculation)
-    const annualPlanCost = 5000;
+    const annualPlanCost = 10000;
 
     // Initialize sliders
     const sliders = document.querySelectorAll('.calculator-slider');

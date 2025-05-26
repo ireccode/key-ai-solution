@@ -11,7 +11,7 @@
     "vars": {
         "EMAIL_FROM": "noreply@keyaisolution.com",
         "EMAIL_TO": "irekkeyaisolution@gmail.com",
-        "EMAIL_SUBJECT": "New Contact Form Submission - Key Solution"
+        "EMAIL_SUBJECT": "New Contact Form Submission - Key AI Solution"
     },
     "observability": {
         "enabled": true,

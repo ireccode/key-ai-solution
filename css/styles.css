@@ -1,4 +1,4 @@
-/* Key Solution Website Styles */
+/* Key AI Solution Website Styles */
 :root {
   /* Primary Colors */
   --primary-gold: #f0c22e;
@@ -8,6 +8,7 @@
   --gold-accent: #efc12d;
   --purple-accent: #120b1b;
   --purple-accent-2: #130d1a;
+  --purple-accent-3: #663399;
   
   /* Text Colors */
   --light-text: #FFFFFF;
@@ -82,7 +83,20 @@ header {
 .logo-text {
   font-size: 1.5rem;
   font-weight: 700;
+  display: flex;
+  gap: 5px;
+}
+
+.logo-key {
   color: var(--primary-gold);
+}
+
+.logo-ai {
+  color: var(--light-text);
+}
+
+.logo-solution {
+  color: var(--purple-accent-3);
 }
 
 nav ul {
@@ -499,6 +513,11 @@ footer {
   font-weight: 600;
   margin-bottom: var(--spacing-md);
   color: var(--primary-gold);
+}
+
+.footer-services-list li {
+  color: #555;
+  margin-bottom: 8px;
 }
 
 .footer-links ul {

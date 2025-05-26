@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://key-solution.com/sitemap.xml
+Sitemap: https://keyaisolution.com/sitemap.xml
