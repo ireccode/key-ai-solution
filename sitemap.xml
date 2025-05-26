@@ -12,49 +12,9 @@
         <priority>1.0</priority>
     </url>
     
-    <!-- Contact Page -->
-    <url>
-        <loc>https://keyaisolution.com/contact</loc>
-        <lastmod>2025-05-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Services Page -->
-    <url>
-        <loc>https://keyaisolution.com/services</loc>
-        <lastmod>2025-05-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- About Page -->
-    <url>
-        <loc>https://keyaisolution.com/about</loc>
-        <lastmod>2025-05-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Blog/Resources Page -->
-    <url>
-        <loc>https://keyaisolution.com/blog</loc>
-        <lastmod>2025-05-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <!-- Case Studies/Portfolio -->
-    <url>
-        <loc>https://keyaisolution.com/case-studies</loc>
-        <lastmod>2025-05-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
     <!-- Privacy Policy -->
     <url>
-        <loc>https://keyaisolution.com/privacy-policy</loc>
+        <loc>https://keyaisolution.com/privacy-policy.html</loc>
         <lastmod>2025-05-26</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
@@ -62,7 +22,7 @@
     
     <!-- Terms of Service -->
     <url>
-        <loc>https://keyaisolution.com/terms-of-service</loc>
+        <loc>https://keyaisolution.com/terms-of-service.html</loc>
         <lastmod>2025-05-26</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
