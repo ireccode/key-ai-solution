@@ -1,16 +1,16 @@
 {
-    "name": "kesol-email-worker",
+    "name": "keyaisolution-email-worker",
     "compatibility_date": "2025-05-25",
     "main": "src/index.ts",
     "send_email": [
         {
             "name": "SEND_EMAIL",
-            "destination_address": "irek@smartechall.com"
+            "destination_address": "irekkeyaisolution@gmail.com"
         }
     ],
     "vars": {
         "EMAIL_FROM": "noreply@keyaisolution.com",
-        "EMAIL_TO": "irek@smartechall.com",
+        "EMAIL_TO": "irekkeyaisolution@gmail.com",
         "EMAIL_SUBJECT": "New Contact Form Submission - Key Solution"
     },
     "observability": {

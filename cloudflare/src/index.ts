@@ -25,7 +25,20 @@ interface FormData {
     company?: string;
     phone?: string;
     
-    // Other form data
+    // AI goal fields
+    ai_goal1?: string;
+    ai_goal2?: string;
+    ai_goal3?: string;
+    ai_goal4?: string;
+    ai_goal5?: string;
+    ai_goal6?: string;
+    ai_goal7?: string;
+    ai_goal8?: string;
+    ai_goal9?: string;
+    ai_goal10?: string;
+    ai_goal_other?: string;
+    
+    // Combined goals array
     goals?: string[];
 }
 
@@ -64,16 +77,23 @@ export default {
             });
         }
         
-        // Verify API key for security
-        const authHeader = request.headers.get("Authorization");
-        if (!authHeader || !authHeader.startsWith("Bearer ") || authHeader.substring(7) !== env.API_KEY) {
-            console.log("Unauthorized access attempt");
+        // Verify request origin for security
+        const requestOrigin = request.headers.get("Origin") || "";
+        const allowedOrigins = [
+            "https://keyaisolution.com",
+            "https://www.keyaisolution.com",
+            "http://localhost:3000", // For local development
+            "http://127.0.0.1:5500"  // For local development with Live Server
+        ];
+        
+        if (!allowedOrigins.includes(requestOrigin)) {
+            console.log("Unauthorized access attempt from origin:", requestOrigin);
             return new Response(JSON.stringify({ error: "Unauthorized" }), {
                 status: 401,
                 headers
             });
         }
-
+        
         try {
             const formData = await request.json();
             
@@ -135,6 +155,24 @@ export default {
   <div class="section">
     <h3>Project Details</h3>
     <p><span class="label">Goals:</span> ${Array.isArray(formData.goals) ? formData.goals.join(', ') : formData.goals || 'Not specified'}</p>
+    
+    <div class="section">
+      <h4>Selected AI Goals</h4>
+      <ul>
+        ${formData.ai_goal1 ? `<li>${formData.ai_goal1}</li>` : ''}
+        ${formData.ai_goal2 ? `<li>${formData.ai_goal2}</li>` : ''}
+        ${formData.ai_goal3 ? `<li>${formData.ai_goal3}</li>` : ''}
+        ${formData.ai_goal4 ? `<li>${formData.ai_goal4}</li>` : ''}
+        ${formData.ai_goal5 ? `<li>${formData.ai_goal5}</li>` : ''}
+        ${formData.ai_goal6 ? `<li>${formData.ai_goal6}</li>` : ''}
+        ${formData.ai_goal7 ? `<li>${formData.ai_goal7}</li>` : ''}
+        ${formData.ai_goal8 ? `<li>${formData.ai_goal8}</li>` : ''}
+        ${formData.ai_goal9 ? `<li>${formData.ai_goal9}</li>` : ''}
+        ${formData.ai_goal10 ? `<li>${formData.ai_goal10}</li>` : ''}
+        ${formData.ai_goal_other ? `<li>Other: ${formData.ai_goal_other}</li>` : ''}
+      </ul>
+    </div>
+    
     <p><span class="label">Business Area:</span> ${formData.business_area || 'Not specified'}</p>
     <p><span class="label">Pain Points:</span> ${formData.pain_points || 'Not specified'}</p>
     <p><span class="label">Timeline:</span> ${formData.timeline || 'Not specified'}</p>
@@ -154,7 +192,7 @@ export default {
                 const boundary = "----EmailFormBoundary" + Math.random().toString(36).substring(2);
                 const emailContent = 
 `From: ${env.EMAIL_FROM || 'noreply@keyaisolution.com'}
-To: ${env.EMAIL_TO || 'irek@smartechall.com'}
+To: ${env.EMAIL_TO || 'irekkeyaisolution@gmail.com'}
 Subject: ${env.EMAIL_SUBJECT || 'New Contact Form Submission - Key Solution'}
 Message-ID: ${messageId}
 Date: ${new Date().toUTCString()}
@@ -178,6 +216,20 @@ Company: ${formData.company || 'Not provided'}
 PROJECT DETAILS:
 --------------
 Goals: ${Array.isArray(formData.goals) ? formData.goals.join(', ') : formData.goals || 'Not specified'}
+
+Selected AI Goals:
+${formData.ai_goal1 ? `- ${formData.ai_goal1}
+` : ''}${formData.ai_goal2 ? `- ${formData.ai_goal2}
+` : ''}${formData.ai_goal3 ? `- ${formData.ai_goal3}
+` : ''}${formData.ai_goal4 ? `- ${formData.ai_goal4}
+` : ''}${formData.ai_goal5 ? `- ${formData.ai_goal5}
+` : ''}${formData.ai_goal6 ? `- ${formData.ai_goal6}
+` : ''}${formData.ai_goal7 ? `- ${formData.ai_goal7}
+` : ''}${formData.ai_goal8 ? `- ${formData.ai_goal8}
+` : ''}${formData.ai_goal9 ? `- ${formData.ai_goal9}
+` : ''}${formData.ai_goal10 ? `- ${formData.ai_goal10}
+` : ''}${formData.ai_goal_other ? `- Other: ${formData.ai_goal_other}
+` : ''}
 Business Area: ${formData.business_area}
 Pain Points: ${formData.pain_points}
 Timeline: ${formData.timeline}
@@ -195,7 +247,7 @@ ${htmlContent}
                 // Create the EmailMessage with the raw email content as a string
                 const emailMessage = new EmailMessage(
                     env.EMAIL_FROM || "noreply@keyaisolution.com", 
-                    env.EMAIL_TO || "irek@smartechall.com", 
+                    env.EMAIL_TO || "irekkeyaisolution@gmail.com", 
                     emailContent
                 );
                 

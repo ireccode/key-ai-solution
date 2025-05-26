@@ -144,12 +144,13 @@ document.addEventListener('DOMContentLoaded', function() {
             // Convert FormData to JSON
             const formJson = {};
             
-            // Handle checkboxes (multiple values with same name)
+            // Handle checkboxes (ai_goal1 through ai_goal10)
             const aiGoals = [];
             let aiGoalOther = '';
             
             for (const [key, value] of formData.entries()) {
-                if (key === 'ai_goal') {
+                if (key.startsWith('ai_goal') && key !== 'ai_goal_other') {
+                    // This captures ai_goal1 through ai_goal10
                     aiGoals.push(value);
                 } else if (key === 'ai_goal_other') {
                     aiGoalOther = value;
@@ -166,17 +167,26 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add goals array to formJson
             formJson.goals = aiGoals;
             
+            // Also add individual ai_goal fields for backward compatibility
+            for (let i = 0; i < aiGoals.length; i++) {
+                formJson[`ai_goal${i+1}`] = aiGoals[i];
+            }
+            
+            // Add ai_goal_other if it exists
+            if (aiGoalOther && aiGoalOther.trim() !== '') {
+                formJson.ai_goal_other = aiGoalOther;
+            }
+            
             // Set default contact method if not provided
             if (!formJson.contact_method) {
                 formJson.contact_method = 'Email';
             }
 
-            // Send to Cloudflare Worker with API key authentication
-            const response = await fetch('https://kesol-email-worker.narkanie00.workers.dev/', {
+            // Send to Cloudflare Worker
+            const response = await fetch('https://keyaisolution-email-worker.keyaisolution.com/', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer Pzs3h3wYFVgUqavCyT2e5ufYwnuB4D24KQjWspkVyU' // Replace with actual API key
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formJson)
             });
