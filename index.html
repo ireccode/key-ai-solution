@@ -89,8 +89,40 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/contact-form.css">
     <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="css/booking.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+    (function (C, A, L) {
+      let p = function (a, ar) {
+        a.q.push(ar);
+      };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () {
+            p(api, arguments);
+          };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {
+      origin: "https://app.cal.com"
+    });
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -116,6 +148,13 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact-form">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Book Now</a>
+                        <div class="dropdown-content">
+                            <a href="#" data-cal-link="irek-keyaisolution/free-demo">Book Free Demo</a>
+                            <a href="#" data-cal-link="irek-keyaisolution/ai-strategy-consultation">Book Consultation</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>

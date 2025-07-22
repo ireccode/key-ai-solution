@@ -205,9 +205,9 @@ export default {
                 // Build a simple multipart MIME message as a string
                 const boundary = "----EmailFormBoundary" + Math.random().toString(36).substring(2);
                 const emailContent = 
-`From: ${env.EMAIL_FROM || 'noreply@keyaisolution.com'}
-To: ${env.EMAIL_TO || 'irekkeyaisolution@gmail.com'}
-Subject: ${env.EMAIL_SUBJECT || 'New Contact Form Submission - Key AI Solution'}
+`From: ${env.EMAIL_FROM}
+To: ${env.EMAIL_TO}
+Subject: ${env.EMAIL_SUBJECT}
 Message-ID: ${messageId}
 Date: ${new Date().toUTCString()}
 MIME-Version: 1.0
@@ -259,8 +259,8 @@ ${htmlContent}
                 
                 // Create the EmailMessage with the raw email content as a string
                 const emailMessage = new EmailMessage(
-                    env.EMAIL_FROM || "noreply@keyaisolution.com", 
-                    env.EMAIL_TO || "irekkeyaisolution@gmail.com", 
+                    env.EMAIL_FROM, 
+                    env.EMAIL_TO, 
                     emailContent
                 );
                 

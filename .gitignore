@@ -13,3 +13,4 @@
 .examples
 
 venv
+.dev.vars
