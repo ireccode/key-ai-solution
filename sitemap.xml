@@ -6,24 +6,24 @@
     
     <!-- Homepage -->
     <url>
-        <loc>https://keyaisolution.com/</loc>
-        <lastmod>2025-05-26</lastmod>
+        <loc>https://www.keyaisolution.com/</loc>
+        <lastmod>2025-08-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     
     <!-- Privacy Policy -->
     <url>
-        <loc>https://keyaisolution.com/privacy-policy.html</loc>
-        <lastmod>2025-05-26</lastmod>
+        <loc>https://www.keyaisolution.com/privacy-policy.html</loc>
+        <lastmod>2025-08-21</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
     <!-- Terms of Service -->
     <url>
-        <loc>https://keyaisolution.com/terms-of-service.html</loc>
-        <lastmod>2025-05-26</lastmod>
+        <loc>https://www.keyaisolution.com/terms-of-service.html</loc>
+        <lastmod>2025-08-21</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>

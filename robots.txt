@@ -1,4 +1,7 @@
 User-agent: *
-Allow: /
+Disallow: /cdn-cgi/
+Disallow: /cloudflare/
+Disallow: /.*
 
-Sitemap: https://keyaisolution.com/sitemap.xml
+# Sitemap location
+Sitemap: https://www.keyaisolution.com/sitemap.xml

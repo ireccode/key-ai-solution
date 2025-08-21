@@ -44,7 +44,7 @@ interface FormData {
 export default {
     async fetch(request: Request, env: Env): Promise<Response> {
         // Extract the origin from the request
-        const origin = request.headers.get("Origin") || "https://keyaisolution.com";
+        const origin = request.headers.get("Origin") || "https://www.keyaisolution.com";
         
         // Set CORS headers - allow requests from the origin that made the request
         const headers = {
@@ -79,8 +79,8 @@ export default {
         // Verify request origin for security
         const requestOrigin = request.headers.get("Origin") || "";
         const allowedOrigins = [
-            "https://keyaisolution.com",
             "https://www.keyaisolution.com",
+            "https://keyaisolution.com",
             "http://localhost:3000", // For local development
             "http://127.0.0.1:5500"  // For local development with Live Server
         ];
