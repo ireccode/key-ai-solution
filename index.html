@@ -35,56 +35,191 @@
     })(window,document,'script','dataLayer','GTM-5CSKLS7N');</script>
     <!-- End Google Tag Manager -->
 
-    <!-- Schema.org markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Key AI Solution",
-      "logo": "https://www.keyaisolution.com/images/logo.webp",
-      "url": "https://www.keyaisolution.com/",
-      "description": "AI solutions for business growth - Custom AI agents, automation, and analytics to optimize your operations and drive results.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "info@keyaisolution.com",
-        "contactType": "customer service"
-      },
-      "mainEntity": [
+<!-- Dynamic SEO + multi-product JSON-LD with long-tail keywords -->
+<script>
+    (function () {
+      var LONG_TAIL_KEYWORD = "AI-driven inbox management for small businesses Australia";
+      var SITE = {
+        name: "Key AI Solution",
+        url: "https://www.keyaisolution.com/",
+        logo: "https://www.keyaisolution.com/images/logo.webp",
+        email: "info@keyaisolution.com",
+        phone: "",
+        priceCurrency: "AUD",
+        sameAs: [
+          "https://www.linkedin.com/in/ireneusz-irek-niedbala-532898ba/",
+          "https://www.facebook.com/profile.php?id=61578081453892",
+          "https://www.youtube.com/@chainAIvision",
+          "https://www.instagram.com/chainaivision/",
+          "https://www.tiktok.com/@chainaivision"
+        ]
+      };
+    
+      // ---- Products with embedded long-tail keywords ----
+      var PRODUCTS = [
         {
-          "@type": "Question",
-          "name": "What types of businesses can benefit from your AI solutions?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our AI solutions are perfect for businesses of all sizes looking to optimize operations, automate repetitive tasks, and gain valuable insights through data analysis. Whether you're a startup or an enterprise, we can tailor our solutions to fit your specific needs."
-          }
+          id: "KAIS-INBOX-001",
+          name: "AI-Driven Inbox Management",
+          description: "AI-driven inbox management for small businesses Australia. Automatically categorizes and prioritizes incoming leads and billing emails. Also ideal for startups in Sydney and customer support teams in Brisbane.",
+          category: "AI Automation"
         },
         {
-          "@type": "Question",
-          "name": "How do your AI solutions improve business efficiency?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our AI solutions automate time-consuming tasks, provide real-time analytics, and make data-driven decisions. This allows your team to focus on high-value activities while our AI handles routine operations."
-          }
+          id: "KAIS-FOLLOW-002",
+          name: "Personalised Email Follow-Ups",
+          description: "Automated personalised email follow-up software for invoices and leads. AI follow-up emails for small business leads Melbourne. Smart reminders for client communication in Australia.",
+          category: "AI Automation"
         },
         {
-          "@type": "Question",
-          "name": "Is your AI solution secure and compliant?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, our solutions are built with enterprise-grade security and comply with SOC-2, ISO, and other industry standards. We prioritize data privacy and security in all our implementations."
-          }
+          id: "KAIS-QUAL-003",
+          name: "AI-Driven Lead Qualification",
+          description: "AI lead qualification tool for B2B businesses Sydney. AI sales lead scoring software Australia. Automatically captures lead information and verifies contacts.",
+          category: "Lead Management"
         },
         {
-          "@type": "Question",
-          "name": "How long does it take to implement your AI solutions?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Implementation time varies based on your specific needs. Our team works quickly to understand your requirements and deploy solutions that deliver immediate value."
-          }
+          id: "KAIS-INVOICE-004",
+          name: "Automated Invoice Processing",
+          description: "AI invoice processing software for accountants in Australia. Automated invoice data extraction for Xero and MYOB. AI invoice approval workflow for small business Sydney.",
+          category: "Accounting Automation"
+        },
+        {
+          id: "KAIS-ONBOARD-005",
+          name: "Client Documents Onboarding",
+          description: "AI client document onboarding automation for law firms. Automated client onboarding software for accountants Australia. AI tool for digitising client forms and contracts Sydney.",
+          category: "Document Automation"
+        },
+        {
+          id: "KAIS-DOCS-006",
+          name: "AI-Driven Document Management",
+          description: "AI-powered document management system with smart search. Vector database document storage for enterprises Australia. AI search tool for internal company documents Sydney.",
+          category: "Knowledge Management"
+        },
+        {
+          id: "KAIS-RAG-007",
+          name: "Conversational Knowledge Base Access",
+          description: "AI conversational knowledge base for businesses Brisbane. Chatbot with RAG knowledge base integration Australia. AI knowledge base assistant for employees Sydney.",
+          category: "Conversational AI"
+        },
+        {
+          id: "KAIS-LEADS-008",
+          name: "Automated Lead Generation",
+          description: "AI automated lead generation for small businesses Melbourne. AI marketing tool to find new clients Australia. AI software for generating B2B leads Sydney.",
+          category: "Lead Generation"
+        },
+        {
+          id: "KAIS-CONTENT-009",
+          name: "Automated Content Generation",
+          description: "AI content generation tool for marketing agencies Australia. AI copywriting software for small businesses Sydney. AI automated blog writing tool Melbourne.",
+          category: "Content Automation"
+        },
+        {
+          id: "KAIS-ASSIST-010",
+          name: "Ultimate Assistant",
+          description: "AI business assistant for SMEs in Australia. All-in-one AI virtual assistant for entrepreneurs Sydney. AI assistant for business automation Brisbane.",
+          category: "Virtual Assistant"
         }
-      ]
-    }
+      ].map(p => ({
+        ...p,
+        url: SITE.url + "#features",
+        availability: "https://schema.org/InStock",
+        price: null,
+        priceText: "Contact us for tailored pricing",
+        image: SITE.logo
+      }));
+    
+      // ---- FAQ items ----
+      var FAQ_ITEMS = [
+        { q: "What is Key AI Solution?", a: SITE.name + " provides AI automation products for businesses — " + LONG_TAIL_KEYWORD + "." },
+        { q: "How can I get a demo?", a: "Use the contact form on our site or email " + SITE.email + " to request a demo." },
+        { q: "Are integrations available with CRM/accounting systems?", a: "Yes, we integrate with CRMs and accounting tools via secure APIs. Custom integrations are also available." },
+        { q: "Is my data secure?", a: "We follow industry-standard security practices and align with SOC-2/ISO requirements." }
+      ];
+    
+      // ---- JSON-LD Builder ----
+      function buildJsonLd() {
+        return {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "LocalBusiness",
+              name: SITE.name,
+              url: SITE.url,
+              logo: SITE.logo,
+              email: SITE.email,
+              telephone: SITE.phone || undefined,
+              description: SITE.name + " provides AI solutions for business growth, including " + PRODUCTS[0].name + ". " + LONG_TAIL_KEYWORD + ".",
+              address: { "@type": "PostalAddress", addressCountry: "AU" },
+              sameAs: SITE.sameAs,
+              potentialAction: { "@type": "ContactAction", target: SITE.url + "#contact-form", name: "Request demo or contact" }
+            },
+            ...PRODUCTS.map(p => ({
+              "@type": "Product",
+              name: p.name,
+              image: [p.image],
+              description: p.description,
+              sku: p.id,
+              category: p.category,
+              url: p.url,
+              offers: {
+                "@type": "Offer",
+                url: p.url + "#contact-form",
+                availability: p.availability,
+                priceCurrency: SITE.priceCurrency,
+                priceSpecification: {
+                  "@type": "PriceSpecification",
+                  priceCurrency: SITE.priceCurrency,
+                  valueAddedTaxIncluded: true,
+                  price: p.price !== null ? p.price : undefined,
+                  description: p.price !== null ? "Price per unit" : p.priceText
+                },
+                seller: { "@type": "Organization", name: SITE.name }
+              }
+            })),
+            {
+              "@type": "FAQPage",
+              mainEntity: FAQ_ITEMS.map(item => ({
+                "@type": "Question",
+                name: item.q,
+                acceptedAnswer: { "@type": "Answer", text: item.a }
+              }))
+            },
+            {
+              "@type": "WebSite",
+              url: SITE.url,
+              potentialAction: {
+                "@type": "SearchAction",
+                target: SITE.url + "?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+          ]
+        };
+      }
+    
+      function insertOrReplaceLD(jsonString) {
+        var id = "dynamic-seo-jsonld";
+        var existing = document.head.querySelector("#" + id);
+        if (existing) existing.parentNode.removeChild(existing);
+        var s = document.createElement("script");
+        s.type = "application/ld+json";
+        s.id = id;
+        s.text = jsonString;
+        document.head.appendChild(s);
+      }
+    
+      // Init
+      function init() {
+        var jsonLd = JSON.stringify(buildJsonLd(), (k, v) => (v === undefined ? undefined : v));
+        insertOrReplaceLD(jsonLd);
+      }
+    
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+        setTimeout(init, 50);
+      } else {
+        document.addEventListener("DOMContentLoaded", init);
+      }
+    })();
     </script>
+            
     
     <title>Key AI Solution - AI Solutions for Business Growth</title>
     <link rel="stylesheet" href="css/styles.css">
