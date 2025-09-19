@@ -44,7 +44,7 @@
         url: "https://www.keyaisolution.com/",
         logo: "https://www.keyaisolution.com/images/logo.webp",
         email: "info@keyaisolution.com",
-        phone: "",
+        phone: "04410844761",
         priceCurrency: "AUD",
         sameAs: [
           "https://www.linkedin.com/in/ireneusz-irek-niedbala-532898ba/",
@@ -55,73 +55,23 @@
         ]
       };
     
-      // ---- Products with embedded long-tail keywords ----
+      // ---- Products ----
       var PRODUCTS = [
-        {
-          id: "KAIS-INBOX-001",
-          name: "AI-Driven Inbox Management",
-          description: "AI-driven inbox management for small businesses Australia. Automatically categorizes and prioritizes incoming leads and billing emails. Also ideal for startups in Sydney and customer support teams in Brisbane.",
-          category: "AI Automation"
-        },
-        {
-          id: "KAIS-FOLLOW-002",
-          name: "Personalised Email Follow-Ups",
-          description: "Automated personalised email follow-up software for invoices and leads. AI follow-up emails for small business leads Melbourne. Smart reminders for client communication in Australia.",
-          category: "AI Automation"
-        },
-        {
-          id: "KAIS-QUAL-003",
-          name: "AI-Driven Lead Qualification",
-          description: "AI lead qualification tool for B2B businesses Sydney. AI sales lead scoring software Australia. Automatically captures lead information and verifies contacts.",
-          category: "Lead Management"
-        },
-        {
-          id: "KAIS-INVOICE-004",
-          name: "Automated Invoice Processing",
-          description: "AI invoice processing software for accountants in Australia. Automated invoice data extraction for Xero and MYOB. AI invoice approval workflow for small business Sydney.",
-          category: "Accounting Automation"
-        },
-        {
-          id: "KAIS-ONBOARD-005",
-          name: "Client Documents Onboarding",
-          description: "AI client document onboarding automation for law firms. Automated client onboarding software for accountants Australia. AI tool for digitising client forms and contracts Sydney.",
-          category: "Document Automation"
-        },
-        {
-          id: "KAIS-DOCS-006",
-          name: "AI-Driven Document Management",
-          description: "AI-powered document management system with smart search. Vector database document storage for enterprises Australia. AI search tool for internal company documents Sydney.",
-          category: "Knowledge Management"
-        },
-        {
-          id: "KAIS-RAG-007",
-          name: "Conversational Knowledge Base Access",
-          description: "AI conversational knowledge base for businesses Brisbane. Chatbot with RAG knowledge base integration Australia. AI knowledge base assistant for employees Sydney.",
-          category: "Conversational AI"
-        },
-        {
-          id: "KAIS-LEADS-008",
-          name: "Automated Lead Generation",
-          description: "AI automated lead generation for small businesses Melbourne. AI marketing tool to find new clients Australia. AI software for generating B2B leads Sydney.",
-          category: "Lead Generation"
-        },
-        {
-          id: "KAIS-CONTENT-009",
-          name: "Automated Content Generation",
-          description: "AI content generation tool for marketing agencies Australia. AI copywriting software for small businesses Sydney. AI automated blog writing tool Melbourne.",
-          category: "Content Automation"
-        },
-        {
-          id: "KAIS-ASSIST-010",
-          name: "Ultimate Assistant",
-          description: "AI business assistant for SMEs in Australia. All-in-one AI virtual assistant for entrepreneurs Sydney. AI assistant for business automation Brisbane.",
-          category: "Virtual Assistant"
-        }
+        { id: "KAIS-INBOX-001", name: "AI-Driven Inbox Management", description: "AI-driven inbox management for small businesses Australia. Automatically categorizes and prioritizes incoming leads and billing emails. Also ideal for startups in Sydney and customer support teams in Brisbane.", category: "AI Automation" },
+        { id: "KAIS-FOLLOW-002", name: "Personalised Email Follow-Ups", description: "Automated personalised email follow-up software for invoices and leads. AI follow-up emails for small business leads Melbourne. Smart reminders for client communication in Australia.", category: "AI Automation" },
+        { id: "KAIS-QUAL-003", name: "AI-Driven Lead Qualification", description: "AI lead qualification tool for B2B businesses Sydney. AI sales lead scoring software Australia. Automatically captures lead information and verifies contacts.", category: "Lead Management" },
+        { id: "KAIS-INVOICE-004", name: "Automated Invoice Processing", description: "AI invoice processing software for accountants in Australia. Automated invoice data extraction for Xero and MYOB. AI invoice approval workflow for small business Sydney.", category: "Accounting Automation" },
+        { id: "KAIS-ONBOARD-005", name: "Client Documents Onboarding", description: "AI client document onboarding automation for law firms. Automated client onboarding software for accountants Australia. AI tool for digitising client forms and contracts Sydney.", category: "Document Automation" },
+        { id: "KAIS-DOCS-006", name: "AI-Driven Document Management", description: "AI-powered document management system with smart search. Vector database document storage for enterprises Australia. AI search tool for internal company documents Sydney.", category: "Knowledge Management" },
+        { id: "KAIS-RAG-007", name: "Conversational Knowledge Base Access", description: "AI conversational knowledge base for businesses Brisbane. Chatbot with RAG knowledge base integration Australia. AI knowledge base assistant for employees Sydney.", category: "Conversational AI" },
+        { id: "KAIS-LEADS-008", name: "Automated Lead Generation", description: "AI automated lead generation for small businesses Melbourne. AI marketing tool to find new clients Australia. AI software for generating B2B leads Sydney.", category: "Lead Generation" },
+        { id: "KAIS-CONTENT-009", name: "Automated Content Generation", description: "AI content generation tool for marketing agencies Australia. AI copywriting software for small businesses Sydney. AI automated blog writing tool Melbourne.", category: "Content Automation" },
+        { id: "KAIS-ASSIST-010", name: "Ultimate Assistant", description: "AI business assistant for SMEs in Australia. All-in-one AI virtual assistant for entrepreneurs Sydney. AI assistant for business automation Brisbane.", category: "Virtual Assistant" }
       ].map(p => ({
         ...p,
         url: SITE.url + "#features",
         availability: "https://schema.org/InStock",
-        price: null,
+        price: 199, // fallback price to avoid missing field error
         priceText: "Contact us for tailored pricing",
         image: SITE.logo
       }));
@@ -164,12 +114,28 @@
                 url: p.url + "#contact-form",
                 availability: p.availability,
                 priceCurrency: SITE.priceCurrency,
-                priceSpecification: {
-                  "@type": "PriceSpecification",
-                  priceCurrency: SITE.priceCurrency,
-                  valueAddedTaxIncluded: true,
-                  price: p.price !== null ? p.price : undefined,
-                  description: p.price !== null ? "Price per unit" : p.priceText
+                price: p.price, // ensure price always exists
+                hasMerchantReturnPolicy: {
+                  "@type": "MerchantReturnPolicy",
+                  "applicableCountry": "AU",
+                  "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+                },
+                shippingDetails: {
+                  "@type": "OfferShippingDetails",
+                  "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "0",
+                    "currency": SITE.priceCurrency
+                  },
+                  "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+                    "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+                  },
+                  "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "AU"
+                  }
                 },
                 seller: { "@type": "Organization", name: SITE.name }
               }
@@ -219,6 +185,7 @@
       }
     })();
     </script>
+    
             
     
     <title>Key AI Solution - AI Solutions for Business Growth</title>
